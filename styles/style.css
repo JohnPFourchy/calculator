@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+}
+
+.center-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.calculator {
+    min-width: 400px;
+    border: 1px solid orange;
+    border-radius: 15px;
+    padding: 10px 5px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    flex: 1;
+    margin: 2px;
+    padding: 5px 0;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+}
+
+.display {
+    text-align: right;
+    margin-right: 15px;
+    font-size: 32px;
+    margin-top: 75px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.btn.clear {
+    flex: 3;
+}
+
+.btn.zero {
+    flex: 3;
+}
+
+.btn.equal, .btn.divide, .btn.subtract, .btn.multiply, .btn.plus {
+    background-color: orange;
+}
+
+/* Make the buttons equal */
+.btn.subtract, .btn.multiply, .btn.plus {
+    padding-left: 2px;
+}
+
