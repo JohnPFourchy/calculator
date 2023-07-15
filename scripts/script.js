@@ -6,7 +6,8 @@ const numbers = document.querySelectorAll(".btn");
 const operators = document.querySelectorAll(".op");
 
 function add(a, b) {
-    return a + b;
+    // type conversion used to avoid concatenation of the numbers instead of addition
+    return parseFloat(a) + parseFloat(b);
 }
 
 function subtract(a, b) {
