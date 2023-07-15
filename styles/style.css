@@ -11,7 +11,7 @@
 }
 
 .calculator {
-    min-width: 400px;
+    min-width: 200px;
     border: 1px solid orange;
     border-radius: 15px;
     padding: 10px 5px;
@@ -22,7 +22,7 @@
     justify-content: space-between;
 }
 
-.btn {
+.btn, .op {
     flex: 1;
     margin: 2px;
     padding: 5px 0;
@@ -40,7 +40,7 @@
     color: white;
 }
 
-.btn.clear {
+.op.clear {
     flex: 3;
 }
 
@@ -48,12 +48,12 @@
     flex: 3;
 }
 
-.btn.equal, .btn.divide, .btn.subtract, .btn.multiply, .btn.plus {
+.op.equal, .op.divide, .op.subtract, .op.multiply, .op.add {
     background-color: orange;
 }
 
 /* Make the buttons equal */
-.btn.subtract, .btn.multiply, .btn.plus {
+.op.subtract, .op.multiply, .op.plus {
     padding-left: 2px;
 }
 
