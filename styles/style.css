@@ -48,8 +48,20 @@
     flex: 3;
 }
 
+.btn:hover {
+    background-color: grey;
+}
+
+.op.clear:hover {
+    background-color: grey;
+}
+
 .op.equal, .op.divide, .op.subtract, .op.multiply, .op.add {
     background-color: orange;
+}
+
+.op.equal:hover, .op.divide:hover, .op.subtract:hover, .op.multiply:hover, .op.add:hover {
+    background-color: darkorange;
 }
 
 /* Make the buttons equal */

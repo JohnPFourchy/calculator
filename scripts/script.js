@@ -62,6 +62,9 @@ function handleOperator(operator) {
     } else if(operator === "equal") {
         if(firstNum !== "" && secondNum !== "" && op != "") {
             const res = operate(firstNum, secondNum, op);
+            firstNum = res;
+            secondNum = "";
+            op = "";
             display(res);
         }
     }
