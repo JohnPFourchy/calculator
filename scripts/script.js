@@ -1,6 +1,8 @@
+// values to hold the first number, second number, and operation in an expression. ex: firstNum op secondNum
 let firstNum = "";
 let secondNum = "";
 let op = "";
+
 const displayOb = document.querySelector(".display");
 const numbers = document.querySelectorAll(".btn");
 const operators = document.querySelectorAll(".op");
@@ -23,6 +25,7 @@ function divide(a, b) {
     return res;
 }
 
+// computes an operation
 function operate(num1, num2, op) {
     let result = "";
     if(op == "add") {
@@ -37,10 +40,12 @@ function operate(num1, num2, op) {
     return result;
 }
 
+// display a number to the screen
 function display(res) {
     displayOb.textContent = res;
 }
 
+// sets the two numbers to be used in each operation
 function setNumber(number) {
     if(op === "") {
         firstNum += number;
@@ -52,13 +57,25 @@ function setNumber(number) {
 }
 
 function handleOperator(operator) {
+    // this first if handles operator chaining ex: 12 + 7 - 5 * 3
+    // if the first and second number are already populated, the first number becomes the result of the previous operation
+    if(firstNum !== "" && secondNum !== "") {
+        firstNum = operate(firstNum, secondNum, op);
+        display(firstNum);
+        op = operator;
+        secondNum = ""
+    }
+
+    // set the operator to be used
     if(operator === "add" || operator === "subtract" || operator === "multiply" || operator === "divide") {
         op = operator;
+        // clear the screen and the numbers, display 0
     } else if(operator === "clear") {
         op = "";
         firstNum = "";
         secondNum = "";
         display(0);
+    // calculate the result, display it, and reset the numbers and operation
     } else if(operator === "equal") {
         if(firstNum !== "" && secondNum !== "" && op != "") {
             const res = operate(firstNum, secondNum, op);
@@ -86,10 +103,6 @@ function addOperatorListeners() {
     });
 }
 
-// call these in a setup function
+// add the event listeners on page load
 addNumberListeners();
 addOperatorListeners();
-
-
-
-
